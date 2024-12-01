@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         'RegisterScreen': (context)=> RegisterScreen(),
 
       },
-      initialRoute: 'RegisterScreen' ,
+      initialRoute: 'LoginScreen' ,
     );
   }
 }

@@ -117,7 +117,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
     );
-    ;
   }
 
   void showSnackBar(BuildContext context,String message) {
