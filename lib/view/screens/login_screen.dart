@@ -83,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       setState(() {});
                       try {
                         await login();
-                        showSnackBar(context, "You Signed Up Successfully");
+                        Navigator.pushNamed(context, 'ChatScreen');
                       } on FirebaseAuthException catch (e) {
                         log(e.code);
                         if (e.code == 'invalid-credential') {

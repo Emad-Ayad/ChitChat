@@ -1,4 +1,5 @@
 import 'package:chitchat/firebase_options.dart';
+import 'package:chitchat/view/screens/chat_screen.dart';
 import 'package:chitchat/view/screens/login_screen.dart';
 import 'package:chitchat/view/screens/register_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'LoginScreen': (context)=> LoginScreen(),
         'RegisterScreen': (context)=> RegisterScreen(),
+        'ChatScreen': (context)=> ChatScreen(),
 
       },
       initialRoute: 'LoginScreen' ,
