@@ -83,11 +83,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       setState(() {});
                       try {
                         await login();
-                        Navigator.pushNamed(context, 'ChatScreen');
+                        Navigator.pushNamed(context, 'ChatScreen',
+                            arguments: email);
                       } on FirebaseAuthException catch (e) {
                         log(e.code);
                         if (e.code == 'invalid-credential') {
-                          showSnackBar(context, "your Email or password in wrong !!");
+                          showSnackBar(
+                              context, "your Email or password in wrong !!");
                         } else if (e.code == 'wrong-password') {
                           showSnackBar(context, "You Used a Wrong password !!");
                         }
@@ -128,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> login() async {
-    UserCredential user = await FirebaseAuth.instance
+    await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email!, password: password!);
   }
 }
