@@ -40,6 +40,17 @@ dependencies:
   firebase_auth: ^5.3.3
   modal_progress_hud_nsn: ^0.5.1
   cloud_firestore: ^5.5.0
+  flutter_native_splash: ^2.4.3
+  flutter_launcher_icons: ^0.14.2
+
+flutter_native_splash:
+  image: assets/images/feather.png
+  color: "#000000"
+
+  android_12:
+    color: "#000000"
+    image: assets/images/feather.png
+
 
 
 
