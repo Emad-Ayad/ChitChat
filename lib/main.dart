@@ -1,9 +1,11 @@
 import 'package:chitchat/firebase_options.dart';
+import 'package:chitchat/view/cubits/login_cubit/login_cubit.dart';
 import 'package:chitchat/view/screens/chat_screen.dart';
 import 'package:chitchat/view/screens/login_screen.dart';
 import 'package:chitchat/view/screens/register_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,15 +20,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: {
-        'LoginScreen': (context)=> LoginScreen(),
-        'RegisterScreen': (context)=> RegisterScreen(),
-        'ChatScreen': (context)=> ChatScreen(),
+    return BlocProvider(
+      create: (context) => LoginCubit(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        routes: {
+          'LoginScreen': (context) => LoginScreen(),
+          'RegisterScreen': (context) => RegisterScreen(),
+          'ChatScreen': (context) => ChatScreen(),
 
-      },
-      initialRoute: 'LoginScreen' ,
+        },
+        initialRoute: 'LoginScreen',
+      ),
     );
   }
 }
