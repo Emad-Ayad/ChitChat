@@ -2,7 +2,6 @@ import 'package:chitchat/util/constant.dart';
 import 'package:chitchat/view/cubits/register_cubit/register_cubit.dart';
 import 'package:chitchat/view/widgets/custom_button.dart';
 import 'package:chitchat/view/widgets/custom_text_field.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';

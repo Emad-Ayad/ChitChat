@@ -1,4 +1,5 @@
 import 'package:chitchat/util/constant.dart';
+import 'package:chitchat/view/cubits/chat_cubit/chat_cubit.dart';
 import 'package:chitchat/view/cubits/login_cubit/login_cubit.dart';
 import 'package:chitchat/view/widgets/custom_button.dart';
 import 'package:chitchat/view/widgets/custom_text_field.dart';
@@ -23,6 +24,7 @@ class LoginScreen extends StatelessWidget {
             isLoading = true;
           } else if (state is LoginSuccess) {
             isLoading = false;
+            BlocProvider.of<ChatCubit>(context).getMessage();
             Navigator.pushNamed(context, 'ChatScreen');
           } else if (state is LoginFailure) {
             isLoading = false;

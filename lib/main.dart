@@ -1,5 +1,5 @@
 import 'package:chitchat/firebase_options.dart';
-import 'package:chitchat/view/cubits/login_cubit/login_cubit.dart';
+import 'package:chitchat/view/cubits/chat_cubit/chat_cubit.dart';
 import 'package:chitchat/view/screens/chat_screen.dart';
 import 'package:chitchat/view/screens/login_screen.dart';
 import 'package:chitchat/view/screens/register_screen.dart';
@@ -20,15 +20,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: {
-        'LoginScreen': (context) => LoginScreen(),
-        'RegisterScreen': (context) => RegisterScreen(),
-        'ChatScreen': (context) => ChatScreen(),
+    return BlocProvider(
+      create: (context) => ChatCubit(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        routes: {
+          'LoginScreen': (context) => LoginScreen(),
+          'RegisterScreen': (context) => RegisterScreen(),
+          'ChatScreen': (context) => ChatScreen(),
 
-      },
-      initialRoute: 'LoginScreen',
+        },
+        initialRoute: 'LoginScreen',
+      ),
     );
   }
 }
