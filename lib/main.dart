@@ -20,18 +20,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => LoginCubit(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        routes: {
-          'LoginScreen': (context) => LoginScreen(),
-          'RegisterScreen': (context) => RegisterScreen(),
-          'ChatScreen': (context) => ChatScreen(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: {
+        'LoginScreen': (context) => LoginScreen(),
+        'RegisterScreen': (context) => RegisterScreen(),
+        'ChatScreen': (context) => ChatScreen(),
 
-        },
-        initialRoute: 'LoginScreen',
-      ),
+      },
+      initialRoute: 'LoginScreen',
     );
   }
 }
